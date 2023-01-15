@@ -1,0 +1,26 @@
+
+
+<div class="row my-5">
+  <div class="col-md-3">
+    <img [src]="baseUrl+movieDetails.poster_path" class="w-100 my-4">
+  </div>
+  <div class="col-md-8 offset-1 ">
+      <h1 class="my-4">{{movieDetails.original_title}}</h1>
+      <h3 class="text-muted my-4">{{movieDetails.tagline}}</h3>
+      <button *ngFor="let movie of movieDetails.genres">{{movie.name}}</button>
+      <h5 class="my-4"> Vote : {{movieDetails.vote_average}}</h5>
+      <h5 class="my-4"> Vote Count : {{movieDetails.vote_count}} </h5>
+      <h5 class="my-4"> popularity : {{movieDetails.popularity}} </h5>
+      <h5 class="my-4"> Release Date : {{movieDetails.release_date}} </h5>
+      <h4 class="text-muted mt-4"> {{movieDetails.overview}} </h4>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

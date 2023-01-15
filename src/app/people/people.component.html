@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-3" *ngFor="let people of trendingPeople">
+      <div class="people-details">
+        <img [src]="baseUrl+people.profile_path" class="w-100 my-3" >
+        <h6>{{people.name}}</h6>
+      </div>
+  </div>
+</div>

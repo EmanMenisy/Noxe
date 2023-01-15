@@ -1,0 +1,27 @@
+<div class="registration-form my-5 w-75 m-auto">
+  <h1 >Login Form </h1>
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+<div class="group-input">
+  <label class="mt-2">Email Address:</label>
+  <input type="email" class="form-control my-1" formControlName="email">
+  <div  *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="text-danger" >
+
+    <p  *ngIf="loginForm.controls['email'].errors?.['email']"> not a valid email </p>
+    <p  *ngIf="loginForm.controls['email'].errors?.['required']"> email is required </p>
+
+   </div>
+  </div>
+<div class="group-input">
+  <label class="mt-2">Password:</label>
+  <input type="password" class="form-control my-1" formControlName="password">
+  <div  *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="text-danger" >
+
+    <p  *ngIf="loginForm.controls['password'].errors?.['pattern']"> not a valid password </p>
+    <p  *ngIf="loginForm.controls['password'].errors?.['required']"> password is required </p>
+
+  </div>
+ </div>
+<button  [disabled]="loginForm.invalid" class="btn btn-info text-light mt-2"   type="Submit"> Submit </button>
+</form>
+
+</div>

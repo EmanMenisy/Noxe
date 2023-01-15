@@ -1,0 +1,18 @@
+<div class="row mt-3">
+  <div class="col-md-4">
+    <hr class="w-25 ">
+    <div class="staticTitle">
+      <h1>Trending</h1>
+      <h1>Tv</h1>
+      <h1>To Watch Now</h1>
+      <p class="text-muted">most watched Tv by days</p>
+    </div>
+    <hr class="w-100">
+  </div>
+  <div class="col-md-2" *ngFor="let trend of trendingTv ">
+    <div class="item"  routerLink="/details/{{trend.id}}">
+      <img [src]="baseUrl+trend.poster_path" class="w-100 mt-4">
+      <h4 class="h6 mt-2">{{trend.name}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<!-- <ngx-spinner type="ball-scale-multiple"></ngx-spinner> -->
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)"
+size = "medium" color = "#09c" type = "pacman"
+ [fullScreen] = "true"><p style="color: rgb(230, 239, 245)" > Loading... </p>
+</ngx-spinner>
+
+<header class="my-5">
+<owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let movie of trendingmovies">
+    <ng-template carouselSlide [id]="movie.id">
+      <img [src]="baseUrl+movie.poster_path" class="w-100 my-2">
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>
+</header>
+
+<div class="row mt-5">
+  <div class="col-md-4">
+    <hr class="w-25">
+    <div class="staticTitle">
+      <h1>Trending</h1>
+      <h1>Movies</h1>
+      <h1>To Watch Now</h1>
+      <p class="text-muted">most watched movies by days</p>
+    </div>
+    <hr class="w-100">
+  </div>
+  <div class="col-md-2" *ngFor="let trend of trendingmovies| search:term">
+    <div class="item" routerLink="/details/{{trend.id}}/movie">
+      <img [src]="baseUrl+trend.poster_path" class="w-100 my-2">
+      <h4 class="h6">{{trend.title | watch}}</h4>
+      <p class=" text-muted pt-2">{{trend.overview | seeMore}} </p>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-md-4">
+    <hr class="w-25">
+    <div class="staticTitle">
+      <h1>Trending</h1>
+      <h1>Tv</h1>
+      <h1>To Watch Now</h1>
+      <p class="text-muted">most watched Tv by days</p>
+    </div>
+    <hr class="w-100">
+  </div>
+  <div class="col-md-2" *ngFor="let trend of trendingTv">
+    <div class="item " routerLink="/details/{{trend.id}}/tv">
+      <img [src]="baseUrl+trend.poster_path" class="w-100 mt-4">
+      <h4 class="h6 mt-2">{{trend.name}}</h4>
+    </div>
+  </div>
+</div>

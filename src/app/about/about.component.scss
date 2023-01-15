@@ -1,0 +1,29 @@
+.frow
+{
+  height: 100vh;
+  background: url(/assets/hero-about-living-room-1024x576.png) ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-size: 36px;
+  font-weight: 500;
+
+}
+.layer{
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: .8;
+  padding-left: 4%;
+}
+h5{
+  font-weight: 600;
+}
+
+
+.content p {
+  line-height: 30px;
+}
+
